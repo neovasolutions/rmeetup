@@ -9,7 +9,8 @@ module RMeetup
     # based on this event.
     class Event
       attr_accessor :id, :name, :updated, :time, :photo_url, :lat, :lon, :event_url,
-                    :rsvpcount, :fee, :feecurrency, :feedesc
+                    :rsvpcount, :fee, :feecurrency, :feedesc, :description, :venue_name, :venue_id, :status ,
+		    :venue_address_1, :venue_zip, :venue_lat, :venue_lon, :venue_state, :venue_city 	
       
       def initialize(event = {})
         self.id           = event['id'].to_i
@@ -24,6 +25,16 @@ module RMeetup
         self.fee          = event['fee']
         self.feecurrency  = event['feecurrency']
         self.feedesc      = event['feedesc']
+	self.description  = event['description']
+	self.venue_name   = event['venue_name']
+	self.venue_id     = event['venue_id']	
+	self.status 	  = event['status']
+	self.venue_address_1 = event['venue_address1']
+	self.venue_zip = event['venue_zip']
+	self.venue_lat = event['venue_lat']
+	self.venue_lon = event['venue_lon']
+	self.venue_state = event['venue_state']
+	self.venue_city = event['venue_city']
       end
     end
   end
